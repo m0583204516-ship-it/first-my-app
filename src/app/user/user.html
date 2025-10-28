@@ -1,6 +1,6 @@
 <div>
-<button>
-<img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg">
-<span>User</span>
-</button>
+    <button (click)="changeUser()">
+        <img [src]="userImgPath">
+        <span> {{name}}</span>
+    </button>
 </div>

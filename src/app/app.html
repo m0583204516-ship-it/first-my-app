@@ -1,11 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
   :host {
@@ -192,21 +184,11 @@
  
     <ul id="users">
       <li>
-          <app-user/>
+          <app-user [name]="users[0].name", [avatar]="users[0].avatar" />
       </li>
       <li>
-          <app-user/>
+        <app-user [name]="users[1].name", [avatar]="users[1].avatar" />
       </li>
-      <li>
-          <app-user/>
-      </li>
-      <li>
-          <app-user/>
-      </li>
-      <li>
-          <app-user/>
-      </li>
-
     </ul>
 </main>
 

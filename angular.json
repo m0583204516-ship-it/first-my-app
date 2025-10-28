@@ -23,7 +23,9 @@
                 "glob": "**/*",
                 "input": "public"                       
               },
-              "src/assets/logo.svg"
+              "src/assets/logo.svg",
+              "src/assets/users"
+
             ],
             "styles": [
               "src/styles.css"
@@ -89,5 +91,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
