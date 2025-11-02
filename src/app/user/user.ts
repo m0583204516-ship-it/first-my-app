@@ -22,10 +22,4 @@ export class User {
   get userImgPath(){
     return 'assets/users/' + this.avatar;
   }
-  
-
-  // changeUser(){
-  //   const randomIndex = Math.floor(Math.random() * USERS.length);
-  //   this.selectedUser = USERS[randomIndex];
-  // }
 }
