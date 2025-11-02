@@ -10,8 +10,15 @@ import { USERS } from './fake_users';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-const users=USERS
+
 export class App {
-  
-  protected readonly title = signal('first-my-app');
+  users=USERS
+  selectUser = this.users[0]
+  onUserSelected(idUser: string){
+    const User = this.users.find(user=> user.id === idUser);
+    if(User)
+    this.selectUser = User;
+    console.log(this.selectUser);
+  }
+
 }
