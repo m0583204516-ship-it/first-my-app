@@ -1,6 +1,6 @@
 <div>
-    <button (click)="onClick()">
+    <button [class.active]="isSelected" (click)="onClick()">
         <img [src]="userImgPath">
-        <span> {{name}}</span>
+        <span> {{userobj.name}}</span>
     </button>
 </div>
