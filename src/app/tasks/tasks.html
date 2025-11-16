@@ -2,7 +2,7 @@
     <header>
         <h2>{{name}}'s Tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="changeAddTask()">Add Task</button>
         </menu>
     </header>
     <ul>
@@ -12,5 +12,10 @@
          </li>
         }
     </ul>
+
+    @if (addTask) {
+        <app-new-task></app-new-task>
+    }
+    
 </section>
     
