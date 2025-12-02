@@ -1,0 +1,85 @@
+<div class="backdrop" (click)="closed()"></div>
+<dialog open (click)="$event.stopPropagation()">
+  <h4>Add User</h4>
+<form #taskForm="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row" formGroupName="name">
+      <div>
+        <p>
+          <label for="firstName">First Name</label>
+          <input id="firstName" formControlName="firstName" type="text" />
+          @if(firstNameRequired){
+            <div class="error-messages">Required field</div>
+          }
+          @if(firstNameMaxLength){
+            <div class="error-messages">Up to 18 characters</div>
+          }
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <label for="lastName">Last Name</label>
+          <input id="lastName" formControlName="lastName" type="text" />
+          @if(lastNameRequired){
+            <div class="error-messages">Required field</div>
+          }
+          @if(lastNameMaxLength){
+            <div class="error-messages">Up to 18 characters</div>
+          }
+        </p>
+      </div>
+    </div>
+
+    <p>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+      @if(emailRequired){
+        <div class="error-messages">Required field</div>
+      }
+      @if(emailInvalid){
+        <div class="error-messages">Invalid email address</div>
+      }
+    </p>
+    
+    <div class="row" formGroupName="passwords">
+      <p>
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" />
+        @if(passwordRequired){
+            <div class="error-messages">Required field</div>
+          }
+          @if(passwordMinLength){
+            <div class="error-messages">Must contain at least 6 characters</div>
+          }
+      </p>
+      <p>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+        @if(confirmPasswordRequired){
+            <div class="error-messages">Required field</div>
+          }
+          @if(passwordsMismatch){
+            <div class="error-messages">The passwords do not match.</div>
+          }
+      </p>
+    </div>
+    <p class="actions">
+    <div class="categories-section" formArrayName="categories">
+      <label>Task Categories</label>
+      <div class="row">
+        @for (category of categories ; track $index) {
+          <div class="category-row">
+          <label>
+            {{category}}
+          <input type="checkbox" [formControlName]="$index" />        
+          </label>
+          </div>
+        }
+      </div>
+    </div>
+    <p class="actions">
+      <button type="button" (click)="closed()">Cancel</button>
+      <button [disabled]="taskForm.form.invalid" type="submit">Create</button>
+    </p>
+  </form>
+</dialog>

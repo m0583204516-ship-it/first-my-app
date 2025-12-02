@@ -1,0 +1,139 @@
+/* רקע אפל מעל כל המסך */
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* תיבת הדיאלוג */
+dialog {
+  width: 90%;
+  max-width: 35rem;
+  background-color: #184d23;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  color: #b3d8c3;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+/* כותרות */
+h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: #e0f7df;
+}
+
+h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #c3e5c2;
+}
+
+/* תוויות */
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #a6dbbd;
+}
+
+/* שדות קלט */
+input,
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.4rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #a6dbbd;
+  background-color: #b3d8c3;
+  margin-top: 0.25rem;
+  color: #184d23;
+  resize: vertical;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 4px #2e7d32;
+}
+
+/* כפתורי פעולה */
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* כפתור ביטול */
+button[type="button"] {
+  background-color: transparent;
+  color: #a6dbbd;
+}
+
+button[type="button"]:hover {
+  color: #e0f7df;
+}
+
+/* כפתור שליחה */
+button[type="submit"] {
+  background-color: #2e7d32;
+  color: #b3d8c3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+button[type="submit"]:hover {
+  background-color: #3a9a3a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* תגובות למסכים גדולים */
+@media (min-width: 768px) {
+  dialog {
+    padding: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1024px) {
+  dialog {
+    padding: 3rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}

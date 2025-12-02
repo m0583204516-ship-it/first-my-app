@@ -6,6 +6,16 @@ main {
   grid-auto-flow: row;
   gap: 2rem;
 }
+.actions {
+  width: 90%;
+  max-width: 50rem;
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 
 #users {
   list-style: none;
@@ -37,7 +47,20 @@ main p {
   letter-spacing: 0.5px;
 }
 
-
+.buttons{
+  padding: 10px 15px;
+  background-color: #1f5221;
+  color: #b3d8c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 77, 35, 0.4);
+  transition: all 0.3s ease;
+}
+.buttons:hover {
+  background-color: #2e7d32;
+  box-shadow: 0 4px 10px rgba(24, 77, 35, 0.6);
+}
 @media (min-width: 768px) {
   main {
     margin: 4rem auto;
