@@ -2,11 +2,11 @@
     <header>
         <h2>{{name}}'s Tasks</h2>
         <menu>
-            <button (click)="changeAddTask()">Add Task</button>
+            <button (click)="(addTask=true)">Add Task</button>
         </menu>
     </header>
     <ul>
-        @for(task of userSelectedTasks; track userId){
+        @for(task of userSelectedTasks; track task.id) {
          <li>         
             <app-task  [taskObj]=task />
          </li>
@@ -14,7 +14,7 @@
     </ul>
 <p></p>
     @if (addTask) {
-        <app-new-task></app-new-task>
+        <app-new-task (TaskAdded)="addNewTask($event)" (closeTask)="(addTask=false)" ></app-new-task>
     }
     
 </section>

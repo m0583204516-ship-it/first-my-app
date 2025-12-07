@@ -13,11 +13,21 @@ export class Tasks {
   tasks = fakeTasks;
   @Input() name :string= '';
   @Input() userId :string= '';
+
   addTask = false;
+  
   get userSelectedTasks() {
     return this.tasks.filter((task) => task.userId === this.userId)
   }
-  changeAddTask(){
-    this.addTask = true;
+  addNewTask(newTask:any) {
+    const id =Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
+    const task = {
+      id: id,
+      title: newTask.title,
+      summary: newTask.summary,
+      dueDate: newTask.dueDate,
+      userId: this.userId
+    };
+    this.tasks.push(task);
   }
 }

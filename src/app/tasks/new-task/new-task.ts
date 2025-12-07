@@ -13,10 +13,20 @@ export class NewTask {
   title='title'
   summary='summary'
   date = 12/5/2025
-  @Output() dontAddTask = new EventEmitter<string>();
+  @Output() closeTask = new EventEmitter<void>();
+  @Output() TaskAdded = new EventEmitter<any>();
+
   addNewTask(task:NgForm){
-    console.log('summary',this.summary)
-    console.log('title',this.title)
-    console.log(task)
+   if(task.valid){
+    this.TaskAdded.emit(task.value);
+     task.reset();
+    this.closeTask.emit();
+   }
+    else{
+      task.form.markAllAsTouched();
+    }
+  }
+  cancel(){
+    this.closeTask.emit();
   }
 }

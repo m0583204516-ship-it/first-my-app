@@ -1,18 +1,31 @@
 <div class="backdrop" (click)="cencel()">
   <dialog open (click)="$event.stopPropagation()" >
     <h1>contacts us!</h1>
-    
-
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" #taskForm="ngForm">
       <label for="name">Name:</label>
       <input id="name" type="text" formControlName="name"/>
-
+      @if(nameRequired){
+        <div class="error-messages">Required field</div>
+      }
+      @if(nameMaxLength){
+        <div class="error-messages">Up to 18 characters</div>
+      }
       <label for="email">Email:</label>
       <input id="email" type="email" formControlName="email"/>
-
+      @if(emailRequired){
+        <div class="error-messages">Required field</div>
+      }
+      @if(emailInvalid){
+        <div class="error-messages">Invalid email address</div>
+      }
       <label for="subject">Subject:</label>
       <input id="subject" type="text" formControlName="subject"/>
-
+      @if(subjectRequired){
+        <div class="error-messages">Required field</div>
+      }
+      @if(subjectMaxLength){
+        <div class="error-messages">Up to 50 characters</div>
+      }
       <label for="message">Message:</label>
       <textarea id="message" formControlName="message"></textarea>
 

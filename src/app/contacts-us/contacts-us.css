@@ -109,7 +109,19 @@ button[type="submit"]:hover {
   background-color: #3a9a3a;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
-
+ input.ng-invalid.ng-touched {
+   border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.082);
+    color: rgb(174, 221, 182);
+  }
+   textarea.ng-invalid.ng-touched {
+   border: 1px solid red;
+   background-color: rgba(255, 0, 0, 0.178);
+  }
+    .error-messages{
+      color: red;
+      font-size: 0.75rem;
+  }
 /* תגובות למסכים גדולים */
 @media (min-width: 768px) {
   dialog {

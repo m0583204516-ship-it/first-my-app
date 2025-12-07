@@ -53,18 +53,6 @@ export class NewUser {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //getters
   get name() : FormGroup {
     return this.form.controls.name;
