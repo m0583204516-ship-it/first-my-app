@@ -30,4 +30,7 @@ export class Tasks {
     };
     this.tasks.push(task);
   }
+  onTaskCompleted(taskId:string){
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
+  }
 }
